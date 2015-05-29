@@ -3,7 +3,7 @@ level 1
 
 background:
 green
-#000000
+#b6f454
 
 tiles:
 0 ground 3
@@ -25,17 +25,3 @@ map:
 0;3 0;2 0;3 0;2 0;3 0;3 0;1 0;2 0;3 0;3 0;3 T
 
 scores:
-player 669 9900
-player 644 11027
-player 639 11261
-player 632 11613
-player 608 12878
-player 608 12902
-player 593 13685
-player 588 14000
-player 587 14031
-player 582 14314
-player 549 16377
-player 437 25705
-player 363 35039
-player 365 34658
