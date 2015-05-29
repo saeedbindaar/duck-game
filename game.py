@@ -432,7 +432,7 @@ class Level:
     ## plays the sounds in the game
     self.sound_player = None
     ## gravity force
-    self.gravity = 4.7
+    self.gravity = 9.8
     ## time from the level start in miliseconds
     self.time = 0
     ## time at which the level was created
@@ -627,8 +627,8 @@ class Player(Movable):
   PLAYER_STATE_WALKING = 1
   PLAYER_STATE_JUMPING_UP = 2
   PLAYER_STATE_JUMPING_DOWN = 3
-  QUACK_COOLDOWN = 5000       # quack cooldown time in milliseconds
-  QUACK_DURATION = 2500       # for how long the quack immobilises the enemies
+  QUACK_COOLDOWN = 7000       # quack cooldown time in milliseconds
+  QUACK_DURATION = 3500       # for how long the quack immobilises the enemies
 
   def __init_attributes(self):
     ## basic player state
@@ -642,7 +642,7 @@ class Player(Movable):
     self.force_computer = ForceComputer(self)
 
   def jump(self):
-    self.force_computer.velocity_vector[1] = -3.7
+    self.force_computer.velocity_vector[1] = -7
 
   ## Makes the player quack and takes appropriate actions (tells the
   #  level about it etc).
@@ -805,9 +805,9 @@ class Renderer:
     ## normal sized font
     self.font_normal = pygame.font.Font("resources/Folktale.ttf",28)
     ## small sized font
-    self.font_small = pygame.font.Font("resources/larabiefont.ttf",20)
+    self.font_small = pygame.font.Font("resources/MTCORSVA.ttf",20)
     ## the text color
-    self.font_color = (100,50,0)
+    self.font_color = (16,215,0)
     ## reference to a level being rendered
     self._level = None
     ## screen width in pixel
@@ -986,7 +986,7 @@ class Renderer:
 
   def render_menu(self, menu):
     result = pygame.Surface((self.screen_width,self.screen_height))
-    result.fill((255,255,255))
+    result.fill((16,215,230))
 
     result.blit(self.logo_image,(self.screen_width / 2 - self.logo_image.get_width() / 2,self.screen_height / 2 - self.logo_image.get_height() / 2))
 
@@ -1265,7 +1265,7 @@ class Game:
   STATE_MENU_ABOUT = 1
   STATE_MENU_PLAY = 2
   STATE_IN_GAME = 3
-  VERSION = "1.0"
+  VERSION = "1.1"
 
   FLYING_FORCE = 2    # what number is substracted from gravity when flapping the ducks wings
 
@@ -1329,6 +1329,7 @@ class Game:
     self.menu_about.text_lines.append("Miloslav Ciz, 2015")
     self.menu_about.text_lines.append("version " + Game.VERSION)
     self.menu_about.text_lines.append("powered by Python + Pygame")
+    self.menu_about.text_lines.append("updated by: Saeed Bin Daar")
     self.menu_about.text_lines.append("your name is set to: " + self.name)
 
     self.menu_about.text_lines.append("")
